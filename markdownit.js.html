@@ -1,0 +1,17 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/markdown-it/10.0.0/markdown-it.min.js"></script>
+
+<script>
+function importMarkdown() {
+  var text = $('#md').val();
+  var md = window.markdownit();
+  var result = md.render(text);
+  google.script.run.withFailureHandler(function(error) {
+    console.log(error);
+  }).withSuccessHandler(function(result) {
+    $('#md').val('');
+    google.script.host.close();
+  }).importMarkdown('<div>' + result + '</div>');
+}
+</script>

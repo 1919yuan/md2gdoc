@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <textarea id="md" rows="20" cols="80"
+              placeholder="Input markdown here, only support lists, headings, paragraph, blockquotes, italic, bold" +
+              " and horizonal rules for now. It's very rough and there are some problems with trimming extra whitespace.">
+    </textarea>
+    <button type="button" onclick="importMarkdown()">Import</button>
+  </body>
+  <?!= include('markdownit.js') ?>
+</html>
